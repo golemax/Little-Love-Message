@@ -34,7 +34,7 @@
         const heart = document.createElement("img");
         heart.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/640px-Heart_coraz%C3%B3n.svg.png";
         heart.alt = "I love you";
-        if (body.scrollHeight <= body.parentElement.scrollTop + window.innerWidth) {
+        if (body.scrollHeight <= body.parentElement.scrollTop + window.innerHeight) {
             body.append(heart);
         }
         requestAnimationFrame(addHeart);
