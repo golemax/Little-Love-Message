@@ -29,12 +29,13 @@
         I Love You
     </h1>
 <script>
+    let mobileBug = 0;
     function addHeart() {
         const body = document.getElementsByTagName("body")[0];
         const heart = document.createElement("img");
         heart.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/640px-Heart_coraz%C3%B3n.svg.png";
         heart.alt = "I love you";
-        if (body.scrollHeight <= body.parentElement.scrollTop + window.innerHeight + 1) {
+        if (body.scrollHeight <= body.parentElement.scrollTop + window.innerHeight + mobileBug++) {
             body.append(heart);
         }
         requestAnimationFrame(addHeart);
