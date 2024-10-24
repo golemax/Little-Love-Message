@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            display: grid;
+            grid: auto-flow / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            margin: 0;
+            background-color: deepskyblue;
+        }
+
+        img {
+            width: 10vw;
+        }
+
+        h1 {
+            grid-column: auto / span 10;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10em;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        I Love You
+    </h1>
+<script>
+    function addHeart() {
+        const body = document.getElementsByTagName("body")[0];
+        const heart = document.createElement("img");
+        heart.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/640px-Heart_coraz%C3%B3n.svg.png";
+        heart.alt = "I love you";
+        if (body.scrollHeight <= body.parentElement.scrollTop + window.innerWidth) {
+            body.append(heart);
+        }
+        requestAnimationFrame(addHeart);
+    }
+    window.onload = function() {
+        requestAnimationFrame(addHeart);
+    }
+</script>
+</body>
+</html>
